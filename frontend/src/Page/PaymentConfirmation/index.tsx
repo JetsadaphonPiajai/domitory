@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Table, Button, Modal } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import { FileImageOutlined } from '@ant-design/icons';
-import './index.css'; // รวมสไตล์ของคุณ
+import slipImage from '../../assets/slip.png'; 
 
 interface PaymentData {
   key: string;
   time: string;
   amount: number;
-  slip: string; // ใช้เป็น URL ของสลิป
+  slip: string;
+  confirmed?: boolean; // เพิ่มฟิลด์นี้เพื่อแสดงว่ารายการได้รับการยืนยันแล้วหรือไม่
 }
 
 const data: PaymentData[] = [
@@ -16,21 +17,21 @@ const data: PaymentData[] = [
     key: '1',
     time: '10:00 AM',
     amount: 1500,
-    slip: '/path/to/slip1.jpg', // เส้นทางหรือ URL ของสลิป
+    slip: slipImage,
   },
   {
     key: '2',
     time: '11:30 AM',
     amount: 2000,
-    slip: '/path/to/slip2.jpg', // เส้นทางหรือ URL ของสลิป
+    slip: slipImage,
   },
-  // เพิ่มข้อมูลเพิ่มเติมที่นี่
 ];
 
 const PaymentConfirmation: React.FC = () => {
   const [visible, setVisible] = useState<boolean>(false);
   const [currentImage, setCurrentImage] = useState<string>('');
   const [selectedKey, setSelectedKey] = useState<string>('');
+  const [paymentData, setPaymentData] = useState<PaymentData[]>(data); // ใช้ state เพื่อจัดการข้อมูล
 
   const handleViewSlip = (url: string) => {
     if (url) {
@@ -48,7 +49,13 @@ const PaymentConfirmation: React.FC = () => {
 
   const handleConfirm = (key: string) => {
     setSelectedKey(key);
-    // ทำการยืนยันที่นี่
+
+    // อัปเดตสถานะของรายการใน state
+    const updatedData = paymentData.map((item) =>
+      item.key === key ? { ...item, confirmed: true } : item
+    );
+    setPaymentData(updatedData);
+
     console.log(`ยืนยันการชำระเงินสำหรับรายการ ${key}`);
   };
 
@@ -83,9 +90,10 @@ const PaymentConfirmation: React.FC = () => {
       render: (_, record) => (
         <Button
           type="primary"
+          disabled={record.confirmed} // ปิดการใช้งานปุ่มถ้ารายการได้รับการยืนยันแล้ว
           onClick={() => handleConfirm(record.key)}
         >
-          ยืนยัน
+          {record.confirmed ? 'ยืนยันแล้ว' : 'ยืนยัน'}
         </Button>
       ),
     },
@@ -124,7 +132,7 @@ const PaymentConfirmation: React.FC = () => {
       </div>
 
       <Table
-        dataSource={data}
+        dataSource={paymentData}
         columns={columns}
         pagination={false}
         bordered

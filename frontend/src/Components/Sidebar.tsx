@@ -62,7 +62,6 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
       </Menu.Item>
     </Menu>
   );
-
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Sider trigger={null} collapsible collapsed={collapsed} className="custom-sider">

@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
-import { Input, Button } from 'antd';
+import { Input, Button, message, Space } from 'antd';
 const { TextArea } = Input;
 
 const Announcement: React.FC = () => {
   const [value, setValue] = useState('');
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const success = () => {
+    messageApi.open({
+      type: 'success',
+      content: 'This is a success message',
+    });
+  };
 
   return (
     <div style={{ padding: '20px' }}>
@@ -12,7 +20,7 @@ const Announcement: React.FC = () => {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          marginBottom: '20px', // ระยะห่างด้านล่างของหัวข้อ
+          marginBottom: '20px',
           position: 'relative',
         }}
       >
@@ -20,7 +28,7 @@ const Announcement: React.FC = () => {
           style={{
             fontSize: '25px',
             position: 'relative',
-            paddingBottom: '10px', // ระยะห่างระหว่างข้อความและขีดล่าง
+            paddingBottom: '10px',
           }}
         >
           แจ้งข่าวสาร
@@ -31,7 +39,7 @@ const Announcement: React.FC = () => {
             bottom: 0,
             left: 0,
             right: 0,
-            borderBottom: '3px solid #000', // ขีดล่างหนา 3px
+            borderBottom: '3px solid #000',
           }}
         />
       </div>
@@ -42,7 +50,7 @@ const Announcement: React.FC = () => {
         <TextArea
           placeholder="Enter title here"
           autoSize
-          style={{ marginLeft: '20px', width: 'calc(100% - 20px)'}} // ช่องว่างด้านซ้าย
+          style={{ marginLeft: '20px', width: 'calc(100% - 20px)' }}
         />
       </div>
 
@@ -54,12 +62,20 @@ const Announcement: React.FC = () => {
           onChange={(e) => setValue(e.target.value)}
           placeholder="Enter announcement here"
           autoSize={{ minRows: 3, maxRows: 10 }}
-          style={{ marginLeft: '20px', width: 'calc(100% - 20px)' }} // ช่องว่างด้านซ้าย
+          style={{ marginLeft: '20px', width: 'calc(100% - 20px)' }}
         />
       </div>
-       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-        <Button type="primary">ยืนยัน</Button>
-      </div>
+      <>
+        {contextHolder}
+        <Space style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          <Button 
+            onClick={success} 
+            style={{ backgroundColor: '#1890ff', color: 'white' }}  // ปรับสไตล์ปุ่มตรงนี้
+          >
+            ยืนยัน
+          </Button>
+        </Space>
+      </>
     </div>
   );
 };
