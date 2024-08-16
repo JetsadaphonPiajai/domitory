@@ -1,25 +1,23 @@
 /* สไตล์สำหรับ Sidebar */
 .custom-sider {
   background: #1b0ba7 !important;
-  position: fixed !important;
-  width: 15vw !important; /* ปรับขนาดตามต้องการ */
+  width: 15vw !important; /* กำหนดความกว้างของ Sidebar */
   height: 100vh !important; /* เต็มความสูงของหน้าจอ */
-  border-right: 2px solid #007bff; /* เพิ่มเส้นขอบขวา */
-  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.2); /* เพิ่มเงาข้างๆ */
-  border-radius: 8px;
+  border-right: 3px solid #007bff; /* เส้นขอบขวา */
+  position: fixed; /* Fix Sidebar ในตำแหน่งคงที่ */
+  overflow: auto; /* ให้ Sidebar เลื่อนได้หากมีเนื้อหามาก */
 }
 
 /* สไตล์สำหรับ Content */
 .custom-content {
   background: #feffff !important; /* สีพื้นหลังขาว */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* drop shadow */
-  margin-left: 13vw;
-  border-radius: 8px; /* ความโค้งของมุม */
-  padding: 24px; /* เพิ่ม padding ตามต้องการ */
-  min-height: 280px; /* ความสูงขั้นต่ำ */
-  width: 87vw; /* ความกว้าง */
-  transition: all 0.3s ease; /* เพิ่ม transition เพื่อความลื่นไหล */
+  margin-left: 1px; /* เว้นระยะห่างจาก Sidebar */ 
+  min-height: 100vh; /* ความสูงขั้นต่ำ */
+  width: calc(100vw - 13.2vw); /* ความกว้างเท่ากับความกว้างของหน้าจอลบด้วยความกว้างของ Sidebar */
+  box-sizing: border-box; /* นำขนาดของ padding มาใช้ในการคำนวณขนาดรวม */
+  overflow: auto;
 }
+
 
 /* กำหนดพื้นหลังสำหรับ Menu */
 .ant-menu {
