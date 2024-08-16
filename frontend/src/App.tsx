@@ -6,7 +6,7 @@ import Enteringandexitingdorm from './Page/Enteringandexitingdorm/index';
 import RequestDelayingPayment from './Page/RequestDelayingPayment/index';
 import ResigningForm from './Page/ResigningForm/index';
 import Announcement from './Page/Announcement/index';
-import PaymentConfirmation from './Page/PaymentConfirmation/index'; // เปลี่ยนชื่อเป็น PaymentConfirmation
+import PaymentConfirmation from './Page/PaymentConfirmation/index'; 
 
 const App: React.FC = () => {
   return (

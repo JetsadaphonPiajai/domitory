@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Table, Select } from 'antd';
-import Detail from '../RequestDelayingPayment/Detail/index'; 
+import ReadRequestDelayingPayment from './ReadRequestDelayingPayment/index'; 
 const { Option } = Select;
 
 interface RecordType {
@@ -119,7 +119,7 @@ const RequestDelayingPayment: React.FC = () => {
           >
             กลับไปหน้าเดิม
           </Button>
-          <Detail key={selectedKey} />
+          <ReadRequestDelayingPayment key={selectedKey} />
         </div>
       ) : (
         <div style={{ display: 'flex', justifyContent: 'center' }}>

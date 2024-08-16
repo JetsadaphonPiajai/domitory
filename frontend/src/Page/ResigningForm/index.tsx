@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Table, Select } from 'antd';
-import Detail from '../ResigningForm/Detail/index'; 
+import ReadResignationForm from './ReadResignationForm/index'; 
 const { Option } = Select;
 
 interface RecordType {
@@ -13,7 +13,7 @@ const ResigningForm: React.FC = () => {
 
   const columns = [
     {
-      title: 'รายการแจ้งซ่อม',
+      title: 'รายการฟอณ์มลาออกหอพัก',
       children: [
         {
           dataIndex: 'date',
@@ -23,7 +23,7 @@ const ResigningForm: React.FC = () => {
           ),
         },
         {
-          key: 'details',
+          key: 'ReadResignationForm',
           render: (_: any, record: RecordType) => (
             <div style={{ textAlign: 'center' }}>
               <Button
@@ -121,7 +121,7 @@ const ResigningForm: React.FC = () => {
           >
             กลับไปหน้าเดิม
           </Button>
-          <Detail key={selectedKey} /> 
+          <ReadResignationForm key={selectedKey} /> 
         </div>
       ) : (
         <div style={{ display: 'flex', justifyContent: 'center' }}>

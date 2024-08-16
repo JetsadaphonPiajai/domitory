@@ -4,18 +4,17 @@
   width: 15vw !important; /* กำหนดความกว้างของ Sidebar */
   height: 100vh !important; /* เต็มความสูงของหน้าจอ */
   border-right: 3px solid #007bff; /* เส้นขอบขวา */
-  position: fixed; /* Fix Sidebar ในตำแหน่งคงที่ */
-  overflow: auto; /* ให้ Sidebar เลื่อนได้หากมีเนื้อหามาก */
+  position: fixed !important; /* Fix Sidebar ในตำแหน่งคงที่ */
 }
 
 /* สไตล์สำหรับ Content */
 .custom-content {
   background: #feffff !important; /* สีพื้นหลังขาว */
-  margin-left: 1px; /* เว้นระยะห่างจาก Sidebar */ 
-  min-height: 100vh; /* ความสูงขั้นต่ำ */
-  width: calc(100vw - 13.2vw); /* ความกว้างเท่ากับความกว้างของหน้าจอลบด้วยความกว้างของ Sidebar */
-  box-sizing: border-box; /* นำขนาดของ padding มาใช้ในการคำนวณขนาดรวม */
-  overflow: auto;
+  margin-left: 27vh !important; /* เว้นระยะห่างจาก Sidebar */ 
+  min-height: 100vh!important; /* ความสูงขั้นต่ำ */
+  width: calc(100vw - 13.2vw)!important; /* ความกว้างเท่ากับความกว้างของหน้าจอลบด้วยความกว้างของ Sidebar */
+  box-sizing: border-box!important; /* นำขนาดของ padding มาใช้ในการคำนวณขนาดรวม */
+  overflow: auto!important;
 }
 
 

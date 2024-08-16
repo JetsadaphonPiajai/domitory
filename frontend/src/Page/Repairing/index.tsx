@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Table, Select } from 'antd';
-import Detail from './Detail/index';
+import ReadRepairing from './ReadRepairing/index';
 
 const { Option } = Select;
 
@@ -14,7 +14,7 @@ const Repairing: React.FC = () => {
 
   const columns = [
     {
-      title: 'รรายการแจ้งซ่อม',
+      title: 'รายการแจ้งซ่อม',
       children: [
         {
           dataIndex: 'date',
@@ -122,7 +122,7 @@ const Repairing: React.FC = () => {
           >
             กลับไปหน้าเดิม
           </Button>
-          <Detail key={selectedKey} /> 
+          <ReadRepairing key={selectedKey} /> 
         </div>
       ) : (
         <div style={{ display: 'flex', justifyContent: 'center' }}>

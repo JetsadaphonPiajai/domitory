@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Table, Select } from 'antd';
-import Detail from '../Enteringandexitingdorm/Detail/index'; 
+import ReadEnteringandexitingdorm from '../Enteringandexitingdorm/ReadEnteringandexitingdorm/index'; 
 
 const { Option } = Select;
 
@@ -14,7 +14,7 @@ const Enteringandexitingdorm: React.FC = () => {
 
   const columns = [
     {
-      title: 'รายการแจ้งซ่อม', // หัวข้อหลัก
+      title: '', // หัวข้อหลัก
       children: [
         {
           dataIndex: 'date',
@@ -122,7 +122,7 @@ const Enteringandexitingdorm: React.FC = () => {
           >
             กลับไปหน้าเดิม
           </Button>
-          <Detail key={selectedKey} /> 
+          <ReadEnteringandexitingdorm key={selectedKey} /> 
         </div>
       ) : (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
