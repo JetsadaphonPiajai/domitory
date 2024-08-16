@@ -1,0 +1,61 @@
+.background {
+    background-color: #e3e3e3; /* สีพื้นหลังของกล่อง */
+    padding: 20px; /* ช่องว่างภายในกล่อง (ปรับขนาดเพื่อลดขนาด padding) */
+    width: 990px; /* ความกว้างของกล่อง */
+    height: 500px; /* ความสูงของกล่อง */
+    border-radius: 15px; /* ความมนของมุมกล่อง */
+    transition: all 0.5s; /* การเปลี่ยนแปลงที่เรียบเนียนภายใน 0.5 วินาที */
+    /*display: flex;*/ /* ใช้ Flexbox */
+    /*align-items: flex-start;*/ /* จัดกล่องแนวตั้งที่ด้านบนสุด */
+    /*justify-content: flex-start;*/ /* จัดกล่องแนวนอนที่ด้านซ้ายสุด */
+    /*overflow: auto;*/ /* จัดการการล้นของเนื้อหา (ถ้ามี) */
+
+}
+
+.title-1-flex {
+    display: flex; /* ใช้ Flexbox */
+    justify-content: space-between; /* จัดให้ทั้งสองฝั่ง */
+    align-items: center; /* จัดกลางแนวตั้ง */
+    margin-bottom: 10; /* ระยะห่างด้านล่าง */
+}
+
+.text-1 {
+    color: rgb(48, 48, 48);
+    font-size: 30px;
+}
+
+
+.status-text {
+    color: rgb(48, 48, 48);
+    font-size: 20px;
+    position: absolute;
+    right: 200px;
+}
+
+.status-textbox {
+    color: rgb(48, 48, 48);
+    font-size: 20px;
+    background-color: #bababa;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    right: 40px;
+}
+
+.full-width-line {
+    border-bottom: 2px solid #8a8a8a; /* สีขาวและความหนา 2px */
+    width: 89%; /* ความกว้างเต็ม */
+    position: absolute;
+    justify-content: space-between; /* จัดให้ทั้งสองฝั่ง */
+    align-items: center; /* จัดกลางแนวตั้ง */
+}
+
+.title-2-flex {
+    display: flex; /* ใช้ Flexbox */
+    gap: 16px;
+}
+
+.name-text {
+    color: rgb(48, 48, 48);
+    font-size: 20px;
+}
