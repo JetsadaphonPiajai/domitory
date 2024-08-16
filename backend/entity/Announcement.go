@@ -10,6 +10,6 @@ type Announcement struct {
 	gorm.Model
 	Title   string
 	Date    time.Time
-	AdminID *uint
-	Admin   Admin `gorm:"foriengKey:AdminID"`
+	Admin_ID uint
+	Admin   Admin `gorm:"foriengKey:Admin_ID"`
 }
