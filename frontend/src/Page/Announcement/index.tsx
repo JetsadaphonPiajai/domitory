@@ -70,7 +70,7 @@ const Announcement: React.FC = () => {
         <Space style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           <Button 
             onClick={success} 
-            style={{ backgroundColor: '#1890ff', color: 'white' }}  // ปรับสไตล์ปุ่มตรงนี้
+            style={{ backgroundColor: '#1890ff', color: 'white' }} 
           >
             ยืนยัน
           </Button>

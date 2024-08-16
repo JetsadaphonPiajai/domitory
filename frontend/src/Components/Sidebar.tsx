@@ -35,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
         navigate('/ResigningForm');
         break;
       case 'paymentConfirmation':
-        navigate('/PaymentConfirmation'); // เปลี่ยนเส้นทางตามชื่อใหม่
+        navigate('/PaymentConfirmation'); 
         break;
       default:
         break;
@@ -43,9 +43,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   };
 
   const handleLogout = () => {
-    // ทำการออกจากระบบที่นี่
     console.log('Logging out...');
-    // ตัวอย่างการนำทางไปยังหน้าเข้าสู่ระบบ
     navigate('/login');
   };
 
@@ -77,7 +75,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
         <Menu
           className='custom-menu'
           mode="inline"
-          selectedKeys={selectedKeys} // ใช้ selectedKeys ใน Menu
+          selectedKeys={selectedKeys}
         >
           <Menu.Item key="1" onClick={() => handleMenuClick('1')}>
             แจ้งข่าวสาร
@@ -88,7 +86,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
           <Menu.SubMenu
             key="dropdown"
             title="แบบฟอร์ม"
-            popupOffset={[0, 4]} // Adjust dropdown positioning
+            popupOffset={[0, 4]} 
           >
             {dropdownMenu}
           </Menu.SubMenu>

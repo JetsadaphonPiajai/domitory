@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Table, Select } from 'antd';
-import Detail from './Detail/index'; // ใช้ List หรือ Detail ตามชื่อที่ตั้งไว้
+import Detail from './Detail/index';
 
 const { Option } = Select;
 
@@ -14,13 +14,13 @@ const Repairing: React.FC = () => {
 
   const columns = [
     {
-      title: 'รรายการแจ้งซ่อม', // หัวข้อหลัก
+      title: 'รรายการแจ้งซ่อม',
       children: [
         {
           dataIndex: 'date',
           key: 'date',
           render: (text: string) => (
-            <div style={{ textAlign: 'center' }}>{text}</div> // กึ่งกลางเนื้อหา
+            <div style={{ textAlign: 'center' }}>{text}</div> 
           ),
         },
         {
@@ -72,7 +72,7 @@ const Repairing: React.FC = () => {
   ];
 
   const handleDetailsClick = (key: string) => {
-    setSelectedKey(key); // ตั้งค่าคีย์ที่เลือก
+    setSelectedKey(key); 
   };
 
   const handleUpdateStatus = (key: string, status: string) => {
@@ -80,7 +80,7 @@ const Repairing: React.FC = () => {
   };
 
   const handleBackClick = () => {
-    setSelectedKey(null); // กลับไปที่ตาราง
+    setSelectedKey(null); 
   };
 
   return (
@@ -122,7 +122,7 @@ const Repairing: React.FC = () => {
           >
             กลับไปหน้าเดิม
           </Button>
-          <Detail key={selectedKey} /> {/* แสดง List เมื่อเลือกคีย์ */}
+          <Detail key={selectedKey} /> 
         </div>
       ) : (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -131,8 +131,8 @@ const Repairing: React.FC = () => {
             dataSource={data}
             pagination={false}
             bordered
-            showHeader={false} // ซ่อนหัวตาราง
-            style={{ maxWidth: '1100px', width: '100%' }} // กำหนดความกว้างสูงสุดของตาราง
+            showHeader={false} 
+            style={{ maxWidth: '1100px', width: '100%' }}
           />
         </div>
       )}

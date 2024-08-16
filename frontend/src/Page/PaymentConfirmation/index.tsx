@@ -106,16 +106,16 @@ const PaymentConfirmation: React.FC = () => {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          marginBottom: '20px', // ระยะห่างด้านล่างของหัวข้อ
+          marginBottom: '20px', 
           position: 'relative',
         }}
       >
         <span
           style={{
             fontSize: '25px',
-            fontWeight: 'bold', // เพิ่มความหนาของฟอนต์
+            fontWeight: 'bold', 
             position: 'relative',
-            paddingBottom: '10px', // ระยะห่างระหว่างข้อความและขีดล่าง
+            paddingBottom: '10px',
           }}
         >
           การยืนยันการชำระเงิน
@@ -126,7 +126,7 @@ const PaymentConfirmation: React.FC = () => {
             bottom: 0,
             left: 0,
             right: 0,
-            borderBottom: '3px solid #000', // ขีดล่างหนา 3px
+            borderBottom: '3px solid #000', 
           }}
         />
       </div>
@@ -136,7 +136,7 @@ const PaymentConfirmation: React.FC = () => {
         columns={columns}
         pagination={false}
         bordered
-        style={{ marginBottom: '20px' }} // เพิ่มระยะห่างด้านล่างของตาราง
+        style={{ marginBottom: '20px' }}
       />
       <Modal
         visible={visible}

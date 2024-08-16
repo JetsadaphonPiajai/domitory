@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Table, Select } from 'antd';
-import Detail from '../RequestDelayingPayment/Detail/index'; // ใช้ List หรือ Detail ตามชื่อที่ตั้งไว้
-
+import Detail from '../RequestDelayingPayment/Detail/index'; 
 const { Option } = Select;
 
 interface RecordType {
@@ -14,13 +13,13 @@ const RequestDelayingPayment: React.FC = () => {
 
   const columns = [
     {
-      title: 'รายการแจ้งซ่อม', // หัวข้อหลัก
+      title: 'รายการแจ้งซ่อม',
       children: [
         {
           dataIndex: 'date',
           key: 'date',
           render: (text: string) => (
-            <div style={{ textAlign: 'center' }}>{text}</div> // กึ่งกลางเนื้อหา
+            <div style={{ textAlign: 'center' }}>{text}</div> 
           ),
         },
         {
@@ -72,16 +71,14 @@ const RequestDelayingPayment: React.FC = () => {
   ];
 
   const handleDetailsClick = (key: string) => {
-    setSelectedKey(key); // ตั้งค่าคีย์ที่เลือก
-  };
+    setSelectedKey(key); };
 
   const handleUpdateStatus = (key: string, status: string) => {
     console.log(`อัพเดทสถานะ ${status} สำหรับ:`, key);
   };
 
   const handleBackClick = () => {
-    setSelectedKey(null); // กลับไปที่ตาราง
-  };
+    setSelectedKey(null);};
 
   return (
     <div style={{ padding: '20px' }}>
@@ -122,7 +119,7 @@ const RequestDelayingPayment: React.FC = () => {
           >
             กลับไปหน้าเดิม
           </Button>
-          <Detail key={selectedKey} /> {/* แสดง List เมื่อเลือกคีย์ */}
+          <Detail key={selectedKey} />
         </div>
       ) : (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -131,8 +128,8 @@ const RequestDelayingPayment: React.FC = () => {
             dataSource={data}
             pagination={false}
             bordered
-            showHeader={false} // ซ่อนหัวตาราง
-            style={{ maxWidth: '1100px', width: '100%' }} // กำหนดความกว้างสูงสุดของตาราง
+            showHeader={false}
+            style={{ maxWidth: '1100px', width: '100%' }} 
           />
         </div>
       )}
