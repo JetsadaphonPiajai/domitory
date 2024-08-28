@@ -14,7 +14,7 @@ type Slip struct {
 
 	// StudentID ทำหน้าที่เป็น FK
 	Student_ID uint
-	Students  Student `gorm:"foreignKey:StudentID"`
+	Students  Student `gorm:"foreignKey:Student_ID"`
 
 	// AdminID ทำหน้าที่เป็น FK
 	Admin_ID uint

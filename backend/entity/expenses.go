@@ -11,14 +11,14 @@ type Expense struct {
 	Date   time.Time
 	Remark string
 	// RentFeeID ทำหน้าที่เป็น FK
-	RentFeeID *uint
-	RentFees  RentFee `gorm:"foreignKey:RentFeeID"`
+	RentFee_ID *uint
+	RentFees  RentFee `gorm:"foreignKey:RentFee_ID"`
 	// ElecFeeID ทำหน้าที่เป็น FK
-	ElecFeeID       *uint
-	ElectricityFees ElectricityFee `gorm:"foreignKey:ElecFeeID"`
+	ElecFee_ID       *uint
+	ElectricityFees ElectricityFee `gorm:"foreignKey:ElecFee_ID"`
 	//  WaterID ทำหน้าที่เป็น FK
-	WaterID   *uint
-	WaterFees WaterFee `gorm:"foreignKey:WaterID"`
+	Water_ID   *uint
+	WaterFees WaterFee `gorm:"foreignKey:Water_ID"`
 	// SlipID ทำหน้าที่เป็น FK
 	SlipID *uint
 	Slips  Slip `gorm:"foreignKey:SlipID"`

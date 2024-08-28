@@ -29,5 +29,5 @@ type Student struct {
 	// 1 นักศึกษาลาออกจากหอพักได้ 1 รอบ
 	ResigningForms []ResigningForm `gorm:"foreignKey:Student_ID"`
 	// 1 Student เป็นเจ้าของได้หลาย Slips
-	Slips []Slip `gorm:"foreignKey:StudentID"`
+	Slips []Slip `gorm:"foreignKey:Student_ID"`
 }

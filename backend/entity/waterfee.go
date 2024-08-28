@@ -13,5 +13,5 @@ type WaterFee struct {
 	Dorms  Dorm `gorm:"foreignKey:DormID"`
 
 	// 1 WaterFee เป็นเจ้าของได้หลาย Expenses
-	Expenses []Expense `gorm:"foreignKey:WaterID"`
+	Expenses []Expense `gorm:"foreignKey:Water_ID"`
 }
